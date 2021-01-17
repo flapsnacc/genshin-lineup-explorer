@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - team-explorer-filter-v2</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container exp-container">
+
+  <div class="card row">
+    <h1 class="page-title">Team Explorer Filter</h1>
+    <p class="page-subtitle">Something about this thing</p>
+    <p class="page-description">An entertaining grapes is a dolphin of the mind. Some assert that their cherry was, in this moment, a patient turtle? What we don't know for sure is whether or not a tough hamster is a snake of the mind?</p>
+  </div>
+
+  <div class="card row">
+    <h2 class="card-title">Inputs</h2>
+    <p class="card-description">In ancient times a kangaroo sees a goldfish as a considerate owl; As far as we can estimate, few can name a dazzling alligator that isn't a dashing cheetah? Unfortunately, that is wrong; on the contrary, a goat of the rat is assumed to be an affable wolf. Their goat was, in this moment, a faithful goat.</p>
+    <form class="experiment-form">
+      <div class="row">
+        <div class="four columns">
+          <h5>Elements</h5>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-element-1" data-ctg="element" data-val="geo">
+            <span class="label-body">Geo</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-element-2" data-ctg="element" data-val="pyro">
+            <span class="label-body">Pyro</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-element-3" data-ctg="element" data-val="hydro">
+            <span class="label-body">Hydro</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-element-4" data-ctg="element" data-val="anemo">
+            <span class="label-body">Anemo</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-element-5" data-ctg="element" data-val="electro">
+            <span class="label-body">Electro</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-element-6" data-ctg="element" data-val="cryo">
+            <span class="label-body">Cryo</span>
+          </label>
+        </div>
+        <div class="four columns">
+          <h5>Reactions</h5>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-reaction-1" data-ctg="reaction" data-val="crystallize">
+            <span class="label-body">Crystallize</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-reaction-2" data-ctg="reaction" data-val="electro-charged">
+            <span class="label-body">Electro-Charged</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-reaction-3" data-ctg="reaction" data-val="frozen">
+            <span class="label-body">Frozen</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-reaction-4" data-ctg="reaction" data-val="melt">
+            <span class="label-body">Melt</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-reaction-5" data-ctg="reaction" data-val="overloaded">
+            <span class="label-body">Overloaded</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-reaction-6" data-ctg="reaction" data-val="superconduct">
+            <span class="label-body">Superconduct</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-reaction-7" data-ctg="reaction" data-val="swirl">
+            <span class="label-body">Swirld</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-reaction-8" data-ctg="reaction" data-val="vaporize">
+            <span class="label-body">Vaporize</span>
+          </label>
+        </div>
+        <div class="four columns">
+          <h5>Weapons</h5>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-weapon-1" data-ctg="weapon" data-val="sword">
+            <span class="label-body">Sword</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-weapon-1" data-ctg="weapon" data-val="bow">
+            <span class="label-body">Bow</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-weapon-1" data-ctg="weapon" data-val="catalyst">
+            <span class="label-body">Catalyst</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-weapon-1" data-ctg="weapon" data-val="claymore">
+            <span class="label-body">Claymore</span>
+          </label>
+          <label class="filter-checkbox">
+            <input type="checkbox" id="exp-weapon-1" data-ctg="weapon" data-val="polearm">
+            <span class="label-body">Polearm</span>
+          </label>
+        </div>
+      </div>
+      <input class="button-primary" type="button" value="Filter Characters">
+    </form>
+  </div>
+
+  <div class="card row">
+    <h2 class="card-title">Outputs</h2>
+    <p class="card-description">The hard-working lemon reveals itself as an enthusiastic lime to those who look! A considerate goat is a crocodile of the mind. The energetic strawberry reveals itself as an instinctive lime to those who look. However, the first righteous cranberry is, in its own way, a seal.</p>
+    <label for="exp-output-1">Output 1</label>
+    <textarea class="u-full-width" id="exp-output-1" readonly>...</textarea>
+    
+    <label for="exp-output-2">Output 2<label>
+    <textarea class="u-full-width" id="exp-output-2" readonly>...</textarea>
+  </div>
+
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
