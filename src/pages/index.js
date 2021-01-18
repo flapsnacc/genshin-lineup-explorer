@@ -10,46 +10,19 @@ import {
   ELEMENTS,
   REACTIONS,
   WEAPONS,
+  initializeCheckboxList,
 } from '../data/enums';
 import { filterCharacters, buildLineups } from '../util/character-utils';
-
-const coinflip = () => {
-  return Math.random() > 0.5;
-}
 
 class BlogIndex extends React.Component {
 
   constructor(props) {
     super(props)
 
-    const initElements = ELEMENTS.map((el, idx) => {
-      return {
-        id: `${el}-${idx}`,
-        key: el,
-        value: coinflip(),
-      }
-    });
-
-    const initReactions = REACTIONS.map((reaction, idx) => {
-      return {
-        id: `${reaction}-${idx}`,
-        key: reaction,
-        value: coinflip(),
-      }
-    });
-
-    const initWeapons = WEAPONS.map((wep, idx) => {
-      return {
-        id: `${wep}-${idx}`,
-        key: wep,
-        value: coinflip(),
-      }
-    });
-
     this.state = {
-      elements: initElements,
-      reactions: initReactions,
-      weapons: initWeapons,
+      elements: initializeCheckboxList(ELEMENTS),
+      reactions: initializeCheckboxList(REACTIONS),
+      weapons: initializeCheckboxList(WEAPONS),
       lineups: [],
     }
 
@@ -57,7 +30,7 @@ class BlogIndex extends React.Component {
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
 
-    console.log('initial state', this.state);
+    console.debug('Initial state', this.state);
   }
 
   getCheckedOptions(checkboxList) {
@@ -76,18 +49,29 @@ class BlogIndex extends React.Component {
     };
   }
 
-  handleCheckboxClick(checkboxId, newValue) {
-    console.log('handleCheckboxClick', checkboxId, newValue);
+  handleCheckboxClick(property, checkboxId, newValue) {
+    const oldList = this.state[property];
+    const newList = oldList.map(item => {
+      if(item.id === checkboxId) {
+        return {
+          id: item.id,
+          key: item.key,
+          value: newValue,
+        }
+      }
+      return item;
+    });
+
+    const stateObj = {};
+    stateObj[property] = newList;
+    this.setState(stateObj);
   }
 
   handleSearch() {
     const filterOptions = this.getFilterOptions();
-    console.log('handleSearch() --- filter opts', filterOptions);
-
     const chars = filterCharacters(filterOptions)
-    console.log('handleSearch() --- characters', chars);
-
     const lineups = buildLineups (chars, 4);
+
     const formattedLineups = lineups.map (lineup => {
       const charNames = lineup.characters.map (char => {
         return char.name;
@@ -98,7 +82,8 @@ class BlogIndex extends React.Component {
         features: lineup.features,
       };
     });
-    console.log('handleSearch() --- formattedLineups', formattedLineups);
+
+    console.info(`[Genshin Lineup Explorer] Found ${lineups.length} lineups built with ${chars.length} characters`);
 
     this.setState({
       lineups: formattedLineups
@@ -114,15 +99,15 @@ class BlogIndex extends React.Component {
             <div className="controls-wrapper">
               <div className="control-group">
                 <h5>Elements</h5>
-                <Checkboxes options={this.state.elements} checkboxHandler={this.handleCheckboxClick}/>
+                <Checkboxes options={this.state.elements} category="elements" checkboxHandler={this.handleCheckboxClick}/>
               </div>
               <div className="control-group">
                 <h5>Reactions</h5>
-                <Checkboxes options={this.state.reactions} checkboxHandler={this.handleCheckboxClick}/>
+                <Checkboxes options={this.state.reactions} category="reactions" checkboxHandler={this.handleCheckboxClick}/>
               </div>
               <div className="control-group">
                 <h5>Weapons</h5>
-                <Checkboxes options={this.state.weapons} checkboxHandler={this.handleCheckboxClick}/>
+                <Checkboxes options={this.state.weapons} category="weapons" checkboxHandler={this.handleCheckboxClick}/>
               </div>
             </div>
             <div className="button-group">
@@ -133,8 +118,26 @@ class BlogIndex extends React.Component {
         {this.state.lineups.map(lineup => {
           return (
             <div className="card" key={lineup.id}>
-              <p>{lineup.characters}</p>
-              <pre>{JSON.stringify(lineup.features, null, 2)}</pre>
+              <div className="lineup-feature characters">
+                {/* <span className="feature-label">CHARACTERS:</span> */}
+                <span className="feature-detail">{lineup.characters}</span>
+              </div>
+              <div className="lineup-feature elements">
+                <span className="feature-label">ELEMENTS:</span>
+                <span className="feature-detail">{lineup.features.elements.join(', ')}</span>
+              </div>
+              <div className="lineup-feature weapons">
+                <span className="feature-label">WEAPONS:</span>
+                <span className="feature-detail">{lineup.features.weapons.join(', ')}</span>
+              </div>
+              <div className="lineup-feature healer">
+                <span className="feature-label">HAS HEALER:</span>
+                <span className="feature-detail">{`${lineup.features.hasHealer}`}</span>
+              </div>
+              <div className="lineup-feature ranged">
+                <span className="feature-label">HAS RANGED WEAPONS:</span>
+                <span className="feature-detail">{`${lineup.features.hasMissile}`}</span>
+              </div>
             </div>
           )
         })}

@@ -83,3 +83,14 @@ h6 {
 .control-group .filter-checkbox .label-body {
   margin-left: 0.25rem;
 }
+
+.lineup-feature.characters .feature-detail {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.lineup-feature .feature-label {
+  font-weight: bold;
+  font-size: 80%;
+  margin-right: 0.5rem;
+}

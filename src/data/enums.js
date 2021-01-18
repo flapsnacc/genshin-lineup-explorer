@@ -1,6 +1,10 @@
 
 import CHARACTER_DATA from './characters';
 
+const coinflip = () => {
+  return Math.random() > 0.5;
+}
+
 const ELEMENTS = [
   'geo',
   'pyro',
@@ -30,8 +34,19 @@ const WEAPONS = [
   'polearm',
 ];
 
+const initializeCheckboxList = (initList) => {
+  return initList.map((el, idx) => {
+    return {
+      id: `${el}-${idx}`,
+      key: el,
+      value: coinflip(),
+    }
+  });
+}
+
 export {
   ELEMENTS,
   REACTIONS,
   WEAPONS,
+  initializeCheckboxList,
 }
