@@ -34,6 +34,11 @@ const WEAPONS = [
   'polearm',
 ];
 
+const LINEUP_OPTIONS = [
+  'healer',
+  'ranged',
+]
+
 const initializeCheckboxList = (initList) => {
   return initList.map((el, idx) => {
     return {
@@ -48,5 +53,6 @@ export {
   ELEMENTS,
   REACTIONS,
   WEAPONS,
+  LINEUP_OPTIONS,
   initializeCheckboxList,
 }

@@ -94,6 +94,16 @@ const findCombo = (currentCombo, currentOptions, totalOptions, teamSize) => {
   }
 };
 
+const checkCandidateLineup = (candidateLineup, lineupOptions) => {
+  if (lineupOptions.includes('healer') && !candidateLineup.hasHealer) {
+    return false;
+  }
+  if (lineupOptions.includes('ranged') && !candidateLineup.hasMissile) {
+    return false;
+  }
+  return true;
+}
+
 
 
 
@@ -117,13 +127,29 @@ const filterCharacters = filterOptions => {
   return filteredCharacters;
 };
 
-const buildLineups = (roster, teamSize) => {
+const buildLineups = (roster, teamSize, lineupOptions) => {
   const playerIndices = Array (roster.length).fill ().map ((x, i) => i);
   teamIndexSet.clear ();
   findCombo ([], playerIndices, playerIndices, teamSize);
   const lineupIndices = Array.from (teamIndexSet);
+  const returnLineups = [];
 
-  const lineups = lineupIndices.map (lineup => {
+  // const lineups = lineupIndices.map (lineup => {
+  //   const teamIndices = JSON.parse (lineup);
+  //   const lineupCharacters = teamIndices.map (rosterIdx => {
+  //     const charObj = roster[rosterIdx];
+  //     return {
+  //       name: charObj.name,
+  //       element: charObj.element,
+  //       weapon: charObj.weapon,
+  //       tags: charObj.tags,
+  //     };
+  //   });
+    
+  //   return new Lineup (lineupCharacters);
+  // });
+
+  lineupIndices.forEach (lineup => {
     const teamIndices = JSON.parse (lineup);
     const lineupCharacters = teamIndices.map (rosterIdx => {
       const charObj = roster[rosterIdx];
@@ -134,10 +160,14 @@ const buildLineups = (roster, teamSize) => {
         tags: charObj.tags,
       };
     });
-    return new Lineup (lineupCharacters);
+    
+    const candidateLineup = new Lineup (lineupCharacters);
+    if(checkCandidateLineup(candidateLineup, lineupOptions)) {
+      returnLineups.push(candidateLineup);
+    }
   });
 
-  return lineups;
+  return returnLineups;
 };
 
 export {

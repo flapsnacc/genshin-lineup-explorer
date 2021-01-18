@@ -10,6 +10,7 @@ import {
   ELEMENTS,
   REACTIONS,
   WEAPONS,
+  LINEUP_OPTIONS,
   initializeCheckboxList,
 } from '../data/enums';
 import { filterCharacters, buildLineups } from '../util/character-utils';
@@ -23,6 +24,7 @@ class BlogIndex extends React.Component {
       elements: initializeCheckboxList(ELEMENTS),
       reactions: initializeCheckboxList(REACTIONS),
       weapons: initializeCheckboxList(WEAPONS),
+      lineupOptions: initializeCheckboxList(LINEUP_OPTIONS),
       lineups: [],
     }
 
@@ -44,7 +46,7 @@ class BlogIndex extends React.Component {
   getFilterOptions() {
     return {
       elements: this.getCheckedOptions(this.state.elements),
-      reactions: [],
+      reactions: this.getCheckedOptions(this.state.reactions),
       weapons: this.getCheckedOptions(this.state.weapons),
     };
   }
@@ -70,7 +72,7 @@ class BlogIndex extends React.Component {
   handleSearch() {
     const filterOptions = this.getFilterOptions();
     const chars = filterCharacters(filterOptions)
-    const lineups = buildLineups (chars, 4);
+    const lineups = buildLineups (chars, 4, this.getCheckedOptions(this.state.lineupOptions));
 
     const formattedLineups = lineups.map (lineup => {
       const charNames = lineup.characters.map (char => {
@@ -101,13 +103,17 @@ class BlogIndex extends React.Component {
                 <h5>Elements</h5>
                 <Checkboxes options={this.state.elements} category="elements" checkboxHandler={this.handleCheckboxClick}/>
               </div>
-              <div className="control-group">
+              <div className="control-group wip">
                 <h5>Reactions</h5>
                 <Checkboxes options={this.state.reactions} category="reactions" checkboxHandler={this.handleCheckboxClick}/>
               </div>
               <div className="control-group">
                 <h5>Weapons</h5>
                 <Checkboxes options={this.state.weapons} category="weapons" checkboxHandler={this.handleCheckboxClick}/>
+              </div>
+              <div className="control-group">
+                <h5>Options</h5>
+                <Checkboxes options={this.state.lineupOptions} category="lineupOptions" checkboxHandler={this.handleCheckboxClick}/>
               </div>
             </div>
             <div className="button-group">

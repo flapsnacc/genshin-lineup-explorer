@@ -73,7 +73,7 @@ h6 {
 }
 
 .control-group {
-  flex: 0 0 30%;
+  flex: 0 0 22%;
 }
 
 .control-group .filter-checkbox {
@@ -93,4 +93,8 @@ h6 {
   font-weight: bold;
   font-size: 80%;
   margin-right: 0.5rem;
+}
+
+.wip {
+  opacity: 25%;
 }
