@@ -35,6 +35,15 @@ footer {
   margin: 1.5rem 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 .card-title {
   margin: 0;
   margin-bottom: 1rem;
@@ -48,4 +57,29 @@ footer {
 }
 .card-description {
   margin: 0;
+}
+
+.controls-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-form .button-group {
+  margin-top: 1.5rem;
+}
+
+.filter-form .button {
+  padding: 0.5rem 1rem;
+}
+
+.control-group {
+  flex: 0 0 30%;
+}
+
+.control-group .filter-checkbox {
+  display: block;
+}
+
+.control-group .filter-checkbox .label-body {
+  margin-left: 0.25rem;
 }
