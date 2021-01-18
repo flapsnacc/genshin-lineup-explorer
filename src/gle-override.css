@@ -1,0 +1,51 @@
+
+:root {
+  --col-dark-purple: #0a043c;
+  --col-dark-purple-2: #171149;
+  --col-dark-purple-3: #241E56;
+  --col-blue: #03506f;
+  --col-grey: #bbbbbb;
+  --col-mayo: #ffe3d8;
+}
+
+body {
+  background-color: var(--col-dark-purple);
+  color: var(--col-mayo);
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--col-mayo);
+}
+
+.global-header,
+footer {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.global-wrapper {
+  padding: 2rem 0;
+}
+
+.card {
+  background-color: var(--col-dark-purple-2);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.card-title {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.card-subtitle {
+  position: relative;
+  bottom: 1rem;
+  opacity: 0.5;
+  margin: 0;
+}
+.card-description {
+  margin: 0;
+}
