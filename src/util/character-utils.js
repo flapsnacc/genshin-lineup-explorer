@@ -109,6 +109,12 @@ const checkCandidateLineup = (candidateLineup, lineupOptions) => {
 
 /////// PUBLIC
 
+const findCharacterData = characterIds => {
+  return CHARACTER_DATA.characters.filter(char => {
+    return characterIds.includes(char.id);
+  });
+}
+
 const filterCharacters = filterOptions => {
   const characterFilter = character => {
     let criteriaPassed = 0;
@@ -127,32 +133,18 @@ const filterCharacters = filterOptions => {
   return filteredCharacters;
 };
 
-const buildLineups = (roster, teamSize, lineupOptions) => {
-  const playerIndices = Array (roster.length).fill ().map ((x, i) => i);
+const buildLineups = (rosterIds, teamSize, lineupOptions) => {
+  // const playerIndices = Array (roster.length).fill ().map ((x, i) => i);
   teamIndexSet.clear ();
-  findCombo ([], playerIndices, playerIndices, teamSize);
-  const lineupIndices = Array.from (teamIndexSet);
+  // findCombo ([], playerIndices, playerIndices, teamSize);
+  findCombo ([], rosterIds, rosterIds, teamSize);
+  const lineupAsIds = Array.from (teamIndexSet);
   const returnLineups = [];
 
-  // const lineups = lineupIndices.map (lineup => {
-  //   const teamIndices = JSON.parse (lineup);
-  //   const lineupCharacters = teamIndices.map (rosterIdx => {
-  //     const charObj = roster[rosterIdx];
-  //     return {
-  //       name: charObj.name,
-  //       element: charObj.element,
-  //       weapon: charObj.weapon,
-  //       tags: charObj.tags,
-  //     };
-  //   });
-    
-  //   return new Lineup (lineupCharacters);
-  // });
-
-  lineupIndices.forEach (lineup => {
-    const teamIndices = JSON.parse (lineup);
-    const lineupCharacters = teamIndices.map (rosterIdx => {
-      const charObj = roster[rosterIdx];
+  lineupAsIds.forEach (lineupIds => {
+    const characterIds = JSON.parse (lineupIds);
+    const lineupCharacterData = findCharacterData(characterIds);
+    const lineupCharacters = lineupCharacterData.map (charObj => {
       return {
         name: charObj.name,
         element: charObj.element,
@@ -171,6 +163,7 @@ const buildLineups = (roster, teamSize, lineupOptions) => {
 };
 
 export {
+  findCharacterData,
   filterCharacters,
-  buildLineups
+  buildLineups,
 }

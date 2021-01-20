@@ -12,6 +12,7 @@ import {
   WEAPONS,
   LINEUP_OPTIONS,
   initializeCheckboxList,
+  initializeCharacterList,
 } from '../data/enums';
 import { filterCharacters, buildLineups } from '../util/character-utils';
 
@@ -21,16 +22,19 @@ class BlogIndex extends React.Component {
     super(props)
 
     this.state = {
-      elements: initializeCheckboxList(ELEMENTS),
-      reactions: initializeCheckboxList(REACTIONS),
-      weapons: initializeCheckboxList(WEAPONS),
+      characters: initializeCharacterList(),
+      elements: initializeCheckboxList(ELEMENTS, false),
+      reactions: initializeCheckboxList(REACTIONS, false),
+      weapons: initializeCheckboxList(WEAPONS, true),
       lineupOptions: initializeCheckboxList(LINEUP_OPTIONS),
       lineups: [],
+      outputMessage: 'GLHF',
     }
 
     this.getFilterOptions = this.getFilterOptions.bind(this);
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
+    this.handleFindRoster = this.handleFindRoster.bind(this);
+    this.handleBuildLineups = this.handleBuildLineups.bind(this);
 
     console.debug('Initial state', this.state);
   }
@@ -40,6 +44,14 @@ class BlogIndex extends React.Component {
       return !!el.value;
     }).map(el => {
       return el.key;
+    });
+  }
+
+  getCheckedOptionIds(checkboxList) {
+    return checkboxList.filter(el => {
+      return !!el.value;
+    }).map(el => {
+      return el.id;
     });
   }
 
@@ -58,6 +70,7 @@ class BlogIndex extends React.Component {
         return {
           id: item.id,
           key: item.key,
+          label: item.label,
           value: newValue,
         }
       }
@@ -69,11 +82,33 @@ class BlogIndex extends React.Component {
     this.setState(stateObj);
   }
 
-  handleSearch() {
+  handleFindRoster() {
     const filterOptions = this.getFilterOptions();
-    const chars = filterCharacters(filterOptions)
-    const lineups = buildLineups (chars, 4, this.getCheckedOptions(this.state.lineupOptions));
+    const chars = filterCharacters(filterOptions);
+    const charIds = chars.map(char => {
+      return char.id;
+    })
 
+    const oldChars = this.state.characters;
+    const newChars = oldChars.map(char => {
+      const checkboxValue = charIds.includes(char.id);
+      return {
+        id: char.id,
+        key: char.key,
+        label: char.label,
+        value: checkboxValue,
+      }
+    });
+
+    this.setState({
+      characters: newChars,
+      outputMessage: `Found ${chars.length} characters`,
+    });
+  }
+
+  handleBuildLineups() {
+    const characterIdsOnscreen = this.getCheckedOptionIds(this.state.characters)
+    const lineups = buildLineups (characterIdsOnscreen, 4, this.getCheckedOptions(this.state.lineupOptions));
     const formattedLineups = lineups.map (lineup => {
       const charNames = lineup.characters.map (char => {
         return char.name;
@@ -85,10 +120,9 @@ class BlogIndex extends React.Component {
       };
     });
 
-    console.info(`[Genshin Lineup Explorer] Found ${lineups.length} lineups built with ${chars.length} characters`);
-
     this.setState({
-      lineups: formattedLineups
+      lineups: formattedLineups,
+      outputMessage: `Found ${lineups.length} lineups, built with ${characterIdsOnscreen.length} characters`,
     })
   }
 
@@ -115,9 +149,20 @@ class BlogIndex extends React.Component {
                 <h5>Options</h5>
                 <Checkboxes options={this.state.lineupOptions} category="lineupOptions" checkboxHandler={this.handleCheckboxClick}/>
               </div>
+              <div className="button-group">
+                <input className="button button-primary button-search" type="button" value="Find Roster" onClick={this.handleFindRoster}></input>
+              </div>
+              <div className="control-group full">
+                <h5>Characters</h5>
+                <Checkboxes options={this.state.characters} category="characters" checkboxHandler={this.handleCheckboxClick}/>
+              </div>
+              <div className="button-group">
+                <input className="button button-primary button-filter" type="button" value="Build Lineups" onClick={this.handleBuildLineups}></input>
+              </div>
             </div>
-            <div className="button-group">
-              <input className="button button-primary button-filter" type="button" value="Find Lineups" onClick={this.handleSearch}></input>
+
+            <div className="output-group">
+              <pre className="text-output" readOnly>{this.state.outputMessage}</pre>
             </div>
           </form>
         </div>
@@ -153,26 +198,3 @@ class BlogIndex extends React.Component {
 }
 
 export default BlogIndex
-
-// export const pageQuery = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-//       nodes {
-//         excerpt
-//         fields {
-//           slug
-//         }
-//         frontmatter {
-//           date(formatString: "MMMM DD, YYYY")
-//           title
-//           description
-//         }
-//       }
-//     }
-//   }
-// `

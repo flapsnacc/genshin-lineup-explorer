@@ -6,45 +6,57 @@ const coinflip = () => {
 }
 
 const ELEMENTS = [
-  'geo',
-  'pyro',
-  'hydro',
-  'anemo',
-  'electro',
-  'cryo',
-  'dendro',
+  'Geo',
+  'Pyro',
+  'Hydro',
+  'Anemo',
+  'Electro',
+  'Cryo',
+  'Dendro',
 ];
 
 const REACTIONS = [
-  'crystallize',
-  'electro-charged',
-  'frozen',
-  'melt',
-  'overloaded',
-  'superconduct',
-  'swirl',
-  'vaporize',
+  'Crystallize',
+  'Electro-charged',
+  'Frozen',
+  'Melt',
+  'Overloaded',
+  'Superconduct',
+  'Swirl',
+  'Vaporize',
 ];
 
 const WEAPONS = [
-  'sword',
-  'bow',
-  'catalyst',
-  'claymore',
-  'polearm',
+  'Sword',
+  'Bow',
+  'Catalyst',
+  'Claymore',
+  'Polearm',
 ];
 
 const LINEUP_OPTIONS = [
-  'healer',
-  'ranged',
+  'Healer',
+  'Ranged',
 ]
 
-const initializeCheckboxList = (initList) => {
+const initializeCheckboxList = (initList, initialValue = false) => {
   return initList.map((el, idx) => {
     return {
       id: `${el}-${idx}`,
-      key: el,
-      value: coinflip(),
+      key: el.toLowerCase(),
+      label: el,
+      value: initialValue,
+    }
+  });
+}
+
+const initializeCharacterList = () => {
+  return CHARACTER_DATA.characters.map((char, idx) => {
+    return {
+      id: char.id,
+      key: char.name.toLowerCase(),
+      label: char.name,
+      value: false,
     }
   });
 }
@@ -55,4 +67,5 @@ export {
   WEAPONS,
   LINEUP_OPTIONS,
   initializeCheckboxList,
+  initializeCharacterList,
 }

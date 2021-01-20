@@ -61,11 +61,12 @@ h6 {
 
 .controls-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .filter-form .button-group {
-  margin-top: 1.5rem;
+  margin: 1rem 0;
 }
 
 .filter-form .button {
@@ -76,12 +77,21 @@ h6 {
   flex: 0 0 22%;
 }
 
+.control-group.full {
+  flex: 0 0 100%;
+}
+
 .control-group .filter-checkbox {
   display: block;
 }
 
+.control-group.full .filter-checkbox {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
 .control-group .filter-checkbox .label-body {
-  margin-left: 0.25rem;
+  margin-left: 0.4rem;
 }
 
 .lineup-feature.characters .feature-detail {
