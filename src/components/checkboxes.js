@@ -1,11 +1,18 @@
 import React from "react"
 
 const Checkbox = ({option, category, checkboxHandler}) => {
+  console.debug(option, category);
+  let cName = `filter-toggle ${option.key}`;
+  if (option.value) {
+    cName += ' on';
+  } else {
+    cName += ' off';
+  }
+
   return (
-    <label className="filter-checkbox">
-      <input type="checkbox" id={option.key} checked={option.value} onChange={e => checkboxHandler(category, option.id, !option.value)}></input>
-      <span className="label-body">{option.label}</span>
-    </label>
+    <div className={cName} onClick={e => checkboxHandler(category, option.id, !option.value)}>
+      <div className="toggle-inner"></div>
+    </div>
   );
 };
 
