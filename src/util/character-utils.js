@@ -158,7 +158,6 @@ const buildLineups = (rosterIds, teamSize, lineupOptions) => {
       returnLineups.push(candidateLineup);
     }
   });
-
   return returnLineups;
 };
 
