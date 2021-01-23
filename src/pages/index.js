@@ -125,7 +125,7 @@ class BlogIndex extends React.Component {
       });
       return {
         id: lineup.id,
-        characters: charNames.join (', '),
+        characters: charNames,
         features: lineup.features,
       };
     });

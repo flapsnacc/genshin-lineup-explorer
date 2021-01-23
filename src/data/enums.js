@@ -39,6 +39,38 @@ const LINEUP_OPTIONS = [
   'Ranged',
 ]
 
+const CHAR_NAMES = [
+  'Albedo',
+  'Amber',
+  'Barbara',
+  'Beidou',
+  'Bennett',
+  'Chongyun',
+  'Diluc',
+  'Diona',
+  'Fischl',
+  'Ganyu',
+  'Jean',
+  'Kaeya',
+  'Keqing',
+  'Klee',
+  'Lisa',
+  'Mona',
+  'Ningguang',
+  'Noelle',
+  'Qiqi',
+  'Razor',
+  'Sucrose',
+  'Tartaglia',
+  'Traveler',
+  'Venti',
+  'Xiangling',
+  'Xiao',
+  'Xingqiu',
+  'Xinyan',
+  'Zhongli',
+]
+
 const initializeCheckboxList = (initList, initialValue = false) => {
   return initList.map((el, idx) => {
     return {
