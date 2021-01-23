@@ -1,5 +1,8 @@
 import React from 'react';
 
+import CharacterIcon from './character-icon';
+import FeatureIcon from './feature-icon';
+
 const LineupResult = ({lineup}) => {
 
   // console.debug(lineup);
@@ -43,67 +46,33 @@ const LineupResult = ({lineup}) => {
     <div className="card card--result">
       <div className="results-column character-column">
         <div className="char-infos">
-          <div className="char-info">
-            <div className={"char-portrait " + lineup.characters[0]}/>
-          </div>
-          <div className="char-info">
-            <div className={"char-portrait " + lineup.characters[1]}/>
-          </div>
-          <div className="char-info">
-            <div className={"char-portrait " + lineup.characters[2]}/>
-          </div>
-          <div className="char-info">
-            <div className={"char-portrait " + lineup.characters[3]}/>
-          </div>
+          <CharacterIcon iconClass={lineup.characters[0].toLowerCase()}/>
+          <CharacterIcon iconClass={lineup.characters[1].toLowerCase()}/>
+          <CharacterIcon iconClass={lineup.characters[2].toLowerCase()}/>
+          <CharacterIcon iconClass={lineup.characters[3].toLowerCase()}/>
         </div>
       </div>
       <div className="results-column elements-column">
         <div className="elements-group">
-          <div className={"feature-icon icon-hydro " + featureMap.hydro}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-cryo " + featureMap.cryo}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-pyro " + featureMap.pyro}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-electro " + featureMap.electro}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-geo " + featureMap.geo}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-anemo " + featureMap.anemo}>
-            <span className="inner-icon"></span>
-          </div>
+          <FeatureIcon iconClass={"hydro " + featureMap.hydro} />
+          <FeatureIcon iconClass={"cryo " + featureMap.cryo} />
+          <FeatureIcon iconClass={"pyro " + featureMap.pyro} />
+          <FeatureIcon iconClass={"electro " + featureMap.electro} />
+          <FeatureIcon iconClass={"geo " + featureMap.geo} />
+          <FeatureIcon iconClass={"anemo " + featureMap.anemo} />
         </div>
         <div className="details-group">
-          <div className={"feature-icon icon-healer " + featureMap.healer}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-ranged " + featureMap.ranged}>
-            <span className="inner-icon"></span>
-          </div>
+          <FeatureIcon iconClass={"healer " + featureMap.healer} />
+          <FeatureIcon iconClass={"ranged " + featureMap.ranged} />
         </div>
       </div>
       <div className="results-column weapons-column">
         <div className="weapons-group">
-          <div className={"feature-icon icon-sword " + featureMap.sword}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-bow " + featureMap.bow}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-catalyst " + featureMap.catalyst}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-claymore " + featureMap.claymore}>
-            <span className="inner-icon"></span>
-          </div>
-          <div className={"feature-icon icon-polearm " + featureMap.polearm}>
-            <span className="inner-icon"></span>
-          </div>
+          <FeatureIcon iconClass={"sword " + featureMap.sword} />
+          <FeatureIcon iconClass={"bow " + featureMap.bow} />
+          <FeatureIcon iconClass={"catalyst " + featureMap.catalyst} />
+          <FeatureIcon iconClass={"claymore " + featureMap.claymore} />
+          <FeatureIcon iconClass={"polearm " + featureMap.polearm} />
         </div>
       </div>
     </div>

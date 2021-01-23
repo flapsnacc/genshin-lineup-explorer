@@ -71,6 +71,7 @@ h6 {
 
 .filter-form .button {
   padding: 0.5rem 1rem;
+  font-weight: bold;
 }
 
 .control-group {
@@ -92,6 +93,10 @@ h6 {
 
 .control-group .filter-checkbox .label-body {
   margin-left: 0.4rem;
+}
+
+.control-group h5 {
+  padding-bottom: 0.5rem;
 }
 
 .lineup-feature.characters .feature-detail {
@@ -190,15 +195,15 @@ h6 {
   padding-bottom: 14%;
 }
 
-.feature-icon.highlight {
+.gle-icon.highlight {
   /* border: 2px solid #F4D760; */
   border: 2px solid rgba(244, 215, 95, 0.8);
 }
-.feature-icon.disabled {
+.gle-icon.disabled {
   opacity: 0.0867;
 }
 
-.feature-icon.feature-icon--hydro {
+.gle-icon.feature-icon--hydro {
   background-color: #0f0;
 }
 
@@ -213,191 +218,7 @@ h6 {
   margin-top: 0.2rem;
 }
 
-
-
-
-.filter-toggle.hydro,
-.feature-icon.icon-hydro {
-  background-image: url(./assets/Element_Hydro.png);
-}
-.filter-toggle.cryo,
-.feature-icon.icon-cryo {
-  background-image: url(./assets/Element_Cryo.png);
-}
-.filter-toggle.pyro,
-.feature-icon.icon-pyro {
-  background-image: url(./assets/Element_Pyro.png);
-}
-.filter-toggle.electro,
-.feature-icon.icon-electro {
-  background-image: url(./assets/Element_Electro.png);
-}
-.filter-toggle.geo,
-.feature-icon.icon-geo {
-  background-image: url(./assets/Element_Geo.png);
-}
-.filter-toggle.anemo,
-.feature-icon.icon-anemo {
-  background-image: url(./assets/Element_Anemo.png);
-}
-
-
-
-
-.filter-toggle.sword,
-.feature-icon.icon-sword {
-  background-image: url(./assets/Weapon-class-sword-icon.png);
-}
-.filter-toggle.bow,
-.feature-icon.icon-bow {
-  background-image: url(./assets/Weapon-class-bow-icon.png);
-}
-.filter-toggle.catalyst,
-.feature-icon.icon-catalyst {
-  background-image: url(./assets/Weapon-class-catalyst-icon.png);
-}
-.filter-toggle.claymore,
-.feature-icon.icon-claymore {
-  background-image: url(./assets/Weapon-class-claymore-icon.png);
-}
-.filter-toggle.polearm,
-.feature-icon.icon-polearm {
-  background-image: url(./assets/Weapon-class-polearm-icon.png);
-}
-
-
-
-
-.filter-toggle.healer,
-.feature-icon.icon-healer {
-  background-image: url(./assets/icon-healer.png);
-}
-.filter-toggle.ranged,
-.feature-icon.icon-ranged {
-  background-image: url(./assets/Weapon-ranged.png);
-}
-
-
-
-
-.filter-toggle.albedo,
-.char-portrait.Albedo {
-  background-image: url(./assets/Genshin-Impact-Albedo-Icon-75x75.png);
-}
-.filter-toggle.amber,
-.char-portrait.Amber {
-  background-image: url(./assets/Genshin-Impact-Amber-Icon-75x75.png);
-}
-.filter-toggle.barbara,
-.char-portrait.Barbara {
-  background-image: url(./assets/Genshin-Impact-Barbara-Icon-75x75.png);
-}
-.filter-toggle.beidou,
-.char-portrait.Beidou {
-  background-image: url(./assets/Genshin-Impact-Beidou-Icon-75x75.png);
-}
-.filter-toggle.bennett,
-.char-portrait.Bennett {
-  background-image: url(./assets/Genshin-Impact-Bennett-Icon-75x75.png);
-}
-.filter-toggle.chongyun,
-.char-portrait.Chongyun {
-  background-image: url(./assets/Genshin-Impact-Chongyun-Icon-75x75.png);
-}
-.filter-toggle.diluc,
-.char-portrait.Diluc {
-  background-image: url(./assets/Genshin-Impact-Diluc-Icon-75x75.png);
-}
-.filter-toggle.diona,
-.char-portrait.Diona {
-  background-image: url(./assets/Genshin-Impact-Diona-Icon-75x75.png);
-}
-.filter-toggle.fischl,
-.char-portrait.Fischl {
-  background-image: url(./assets/Genshin-Impact-Fischl-Icon-75x75.png);
-}
-.filter-toggle.ganyu,
-.char-portrait.Ganyu {
-  background-image: url(./assets/Genshin-Impact-Ganyu-Icon-75x75.png);
-}
-.filter-toggle.jean,
-.char-portrait.Jean {
-  background-image: url(./assets/Genshin-Impact-Jean-Icon-75x75.png);
-}
-.filter-toggle.kaeya,
-.char-portrait.Kaeya {
-  background-image: url(./assets/Genshin-Impact-Kaeya-Icon-75x75.png);
-}
-.filter-toggle.keqing,
-.char-portrait.Keqing {
-  background-image: url(./assets/Genshin-Impact-Keqing-Icon-75x75.png);
-}
-.filter-toggle.klee,
-.char-portrait.Klee {
-  background-image: url(./assets/Genshin-Impact-Klee-Icon-75x75.png);
-}
-.filter-toggle.lisa,
-.char-portrait.Lisa {
-  background-image: url(./assets/Genshin-Impact-Lisa-Icon-75x75.png);
-}
-.filter-toggle.mona,
-.char-portrait.Mona {
-  background-image: url(./assets/Genshin-Impact-Mona-Icon-75x75.png);
-}
-.filter-toggle.ningguang,
-.char-portrait.Ningguang {
-  background-image: url(./assets/Genshin-Impact-Ningguang-Icon-75x75.png);
-}
-.filter-toggle.noelle,
-.char-portrait.Noelle {
-  background-image: url(./assets/Genshin-Impact-Noelle-Icon-75x75.png);
-}
-.filter-toggle.qiqi,
-.char-portrait.Qiqi {
-  background-image: url(./assets/Genshin-Impact-Qiqi-Icon-75x75.png);
-}
-.filter-toggle.razor,
-.char-portrait.Razor {
-  background-image: url(./assets/Genshin-Impact-Razor-Icon-75x75.png);
-}
-.filter-toggle.sucrose,
-.char-portrait.Sucrose {
-  background-image: url(./assets/Genshin-Impact-Sucrose-Icon-75x75.png);
-}
-.filter-toggle.tartaglia,
-.char-portrait.Tartaglia {
-  background-image: url(./assets/Genshin-Impact-Tartaglia-Icon-75x75.png);
-}
-.filter-toggle.traveler,
-.char-portrait.Traveler {
-  background-image: url(./assets/Traveler.png);
-}
-.filter-toggle.venti,
-.char-portrait.Venti {
-  background-image: url(./assets/Genshin-Impact-Venti-Icon-75x75.png);
-}
-.filter-toggle.xiangling,
-.char-portrait.Xiangling {
-  background-image: url(./assets/Genshin-Impact-Xiangling-Icon-75x75.png);
-}
-.filter-toggle.xiao,
-.char-portrait.Xiao {
-  background-image: url(./assets/Genshin-Impact-Xiao-Icon-75x75.png);
-}
-.filter-toggle.xingqiu,
-.char-portrait.Xingqiu {
-  background-image: url(./assets/Genshin-Impact-Xingqiu-Icon-75x75.png);
-}
-.filter-toggle.xinyan,
-.char-portrait.Xinyan {
-  background-image: url(./assets/Genshin-Impact-Xinyan-Icon-75x75.png);
-}
-.filter-toggle.zhongli,
-.char-portrait.Zhongli {
-  background-image: url(./assets/Genshin-Impact-Zhongli-Icon-75x75.png);
-}
-
-.filter-toggle {
+.checkbox-icon {
   height: 2.5rem;
   width: 2.5rem;
   background-color: rgba(0, 0, 0, 0.1);
@@ -409,6 +230,6 @@ h6 {
   margin-right: 0.5rem;
 }
 
-.filter-toggle.off {
+.gle-icon.off {
   opacity: 0.15;
 }

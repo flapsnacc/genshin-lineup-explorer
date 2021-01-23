@@ -1,0 +1,176 @@
+.gle-icon {
+  background-image: url(./assets/icon-base.png);
+}
+
+
+
+
+.gle-icon.hydro {
+  background-image: url(./assets/Element_Hydro.png);
+}
+.gle-icon.cryo {
+  background-image: url(./assets/Element_Cryo.png);
+}
+.gle-icon.pyro {
+  background-image: url(./assets/Element_Pyro.png);
+}
+.gle-icon.electro {
+  background-image: url(./assets/Element_Electro.png);
+}
+.gle-icon.geo {
+  background-image: url(./assets/Element_Geo.png);
+}
+.gle-icon.anemo {
+  background-image: url(./assets/Element_Anemo.png);
+}
+.gle-icon.dendro {
+  background-image: url(./assets/Element_Dendro.png);
+}
+
+
+
+
+.gle-icon.sword {
+  background-image: url(./assets/Weapon-class-sword-icon.png);
+}
+.gle-icon.bow {
+  background-image: url(./assets/Weapon-class-bow-icon.png);
+}
+.gle-icon.catalyst {
+  background-image: url(./assets/Weapon-class-catalyst-icon.png);
+}
+.gle-icon.claymore {
+  background-image: url(./assets/Weapon-class-claymore-icon.png);
+}
+.gle-icon.polearm {
+  background-image: url(./assets/Weapon-class-polearm-icon.png);
+}
+
+
+
+
+.gle-icon.healer {
+  background-image: url(./assets/icon-healer.png);
+}
+.gle-icon.ranged {
+  background-image: url(./assets/Weapon-ranged.png);
+}
+
+
+
+
+.gle-icon.albedo{
+  background-image: url(./assets/Genshin-Impact-Albedo-Icon-75x75.png);
+}
+.gle-icon.amber{
+  background-image: url(./assets/Genshin-Impact-Amber-Icon-75x75.png);
+}
+.gle-icon.barbara{
+  background-image: url(./assets/Genshin-Impact-Barbara-Icon-75x75.png);
+}
+.gle-icon.beidou{
+  background-image: url(./assets/Genshin-Impact-Beidou-Icon-75x75.png);
+}
+.gle-icon.bennett{
+  background-image: url(./assets/Genshin-Impact-Bennett-Icon-75x75.png);
+}
+.gle-icon.chongyun{
+  background-image: url(./assets/Genshin-Impact-Chongyun-Icon-75x75.png);
+}
+.gle-icon.diluc{
+  background-image: url(./assets/Genshin-Impact-Diluc-Icon-75x75.png);
+}
+.gle-icon.diona{
+  background-image: url(./assets/Genshin-Impact-Diona-Icon-75x75.png);
+}
+.gle-icon.fischl{
+  background-image: url(./assets/Genshin-Impact-Fischl-Icon-75x75.png);
+}
+.gle-icon.ganyu{
+  background-image: url(./assets/Genshin-Impact-Ganyu-Icon-75x75.png);
+}
+.gle-icon.jean{
+  background-image: url(./assets/Genshin-Impact-Jean-Icon-75x75.png);
+}
+.gle-icon.kaeya{
+  background-image: url(./assets/Genshin-Impact-Kaeya-Icon-75x75.png);
+}
+.gle-icon.keqing{
+  background-image: url(./assets/Genshin-Impact-Keqing-Icon-75x75.png);
+}
+.gle-icon.klee{
+  background-image: url(./assets/Genshin-Impact-Klee-Icon-75x75.png);
+}
+.gle-icon.lisa{
+  background-image: url(./assets/Genshin-Impact-Lisa-Icon-75x75.png);
+}
+.gle-icon.mona{
+  background-image: url(./assets/Genshin-Impact-Mona-Icon-75x75.png);
+}
+.gle-icon.ningguang{
+  background-image: url(./assets/Genshin-Impact-Ningguang-Icon-75x75.png);
+}
+.gle-icon.noelle{
+  background-image: url(./assets/Genshin-Impact-Noelle-Icon-75x75.png);
+}
+.gle-icon.qiqi{
+  background-image: url(./assets/Genshin-Impact-Qiqi-Icon-75x75.png);
+}
+.gle-icon.razor{
+  background-image: url(./assets/Genshin-Impact-Razor-Icon-75x75.png);
+}
+.gle-icon.sucrose{
+  background-image: url(./assets/Genshin-Impact-Sucrose-Icon-75x75.png);
+}
+.gle-icon.tartaglia{
+  background-image: url(./assets/Genshin-Impact-Tartaglia-Icon-75x75.png);
+}
+.gle-icon.traveler{
+  background-image: url(./assets/Traveler.png);
+}
+.gle-icon.venti{
+  background-image: url(./assets/Genshin-Impact-Venti-Icon-75x75.png);
+}
+.gle-icon.xiangling{
+  background-image: url(./assets/Genshin-Impact-Xiangling-Icon-75x75.png);
+}
+.gle-icon.xiao{
+  background-image: url(./assets/Genshin-Impact-Xiao-Icon-75x75.png);
+}
+.gle-icon.xingqiu{
+  background-image: url(./assets/Genshin-Impact-Xingqiu-Icon-75x75.png);
+}
+.gle-icon.xinyan{
+  background-image: url(./assets/Genshin-Impact-Xinyan-Icon-75x75.png);
+}
+.gle-icon.zhongli{
+  background-image: url(./assets/Genshin-Impact-Zhongli-Icon-75x75.png);
+}
+
+
+
+
+.gle-icon.crystallize {
+  background-image: url(./assets/reaction-crystallize.png);
+}
+.gle-icon.electro-charged {
+  background-image: url(./assets/reaction-electro-charged.png);
+}
+.gle-icon.frozen {
+  background-image: url(./assets/reaction-frozen.png);
+}
+.gle-icon.melt {
+  background-image: url(./assets/reaction-melt.png);
+}
+.gle-icon.overloaded {
+  background-image: url(./assets/reaction-overloaded.png);
+}
+.gle-icon.superconduct {
+  background-image: url(./assets/reaction-superconduct.png);
+}
+.gle-icon.swirl {
+  background-image: url(./assets/reaction-swirl.png);
+}
+.gle-icon.vaporize {
+  background-image: url(./assets/reaction-vaporize.png);
+}

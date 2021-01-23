@@ -29,6 +29,7 @@ class BlogIndex extends React.Component {
       lineupOptions: initializeCheckboxList (LINEUP_OPTIONS),
       lineups: [],
       outputMessage: 'GLHF',
+      rosterSize: 0,
     };
 
     this.getFilterOptions = this.getFilterOptions.bind (this);
@@ -83,6 +84,17 @@ class BlogIndex extends React.Component {
 
     const stateObj = {};
     stateObj[property] = newList;
+
+    if (property === 'characters') {
+      let checkedCounter = 0;
+      newList.forEach(charCheckbox => {
+        if (charCheckbox.value) {
+          checkedCounter++;
+        }
+      });
+      stateObj.rosterSize = checkedCounter;
+    }
+
     this.setState (stateObj);
   }
 
@@ -103,8 +115,9 @@ class BlogIndex extends React.Component {
         value: checkboxValue,
       };
     });
-
+    console.debug('handleFindRoster', chars, oldChars, newChars);
     this.setState ({
+      rosterSize: chars.length,
       characters: newChars,
       outputMessage: `Found ${chars.length} characters`,
     });
@@ -197,6 +210,7 @@ class BlogIndex extends React.Component {
                   type="button"
                   value="Build Lineups"
                   onClick={this.handleBuildLineups}
+                  disabled={this.state.rosterSize < 4}
                 />
               </div>
             </div>
