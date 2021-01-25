@@ -9,7 +9,10 @@ const Layout = ({children}) => {
           <h1 className="card-title page-title">Genshin Lineup Explorer</h1>
           <p className="card-subtitle page-subtitle">The finest waifu squad manager</p>
           <p className="card-description page-description">
-            An entertaining grapes is a dolphin of the mind. Some assert that their cherry was, in this moment, a patient turtle? What we don't know for sure is whether or not a tough hamster is a snake of the mind?
+            Find that perfect lineup! Start by finding the right characters through the filters<br />
+            OR<br />
+            Click the character icons to select characters yourself.<br /><br />
+            Then smash that "Build Lineups" button.
           </p>
         </div>
       </header>
